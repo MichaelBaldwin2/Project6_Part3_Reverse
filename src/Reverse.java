@@ -1,10 +1,13 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Reverse {
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int[] inputArr;
+    DecimalFormat format;
 
+    format = new DecimalFormat("##.#");
     inputArr = new int[8];
     System.out.print("Please enter 8 positive integers: ");
     for (int i = 0; i < 8; i++) {
@@ -16,7 +19,7 @@ public static void main(String[] args) {
     for (int anInputArr : inputArr)
         System.out.print(anInputArr + " ");
 
-    System.out.print("\nThe average is " + getTotal(inputArr) + "/8 = " + (float) getTotal(inputArr) / 8f);
+    System.out.print("\nThe average is " + getTotal(inputArr) + "/8 = " + format.format(getAverage(inputArr)));
 }
 
 private static void reverse(int[] arr) {
@@ -33,5 +36,9 @@ private static int getTotal(int[] arr) {
     for (int i : arr)
         total += i;
     return total;
+}
+
+private static double getAverage(int[] arr) {
+    return (double) getTotal(arr) / (float) arr.length;
 }
 }
