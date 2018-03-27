@@ -2,6 +2,12 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Reverse {
+// Written by: Mike Baldwin
+// Project 6 - Part 3 - Reverse
+// This program reads in 8 positive integers.
+// Then it prints out the values in reverse order
+// as well as the average.
+
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int[] inputArr;
@@ -19,7 +25,8 @@ public static void main(String[] args) {
     for (int anInputArr : inputArr)
         System.out.print(anInputArr + " ");
 
-    System.out.print("\nThe average is " + getTotal(inputArr) + "/8 = " + format.format(getAverage(inputArr)));
+    System.out.print("\nThe average is " + getTotal(inputArr) + "/8 = " +
+            format.format(getAverage(inputArr)));
 }
 
 private static void reverse(int[] arr) {
